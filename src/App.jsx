@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './App.css'
-import {PersonalDetails, Education} from './components/personal'
+import {PersonalDetails, Education, WorkExperience} from './components/personal'
 import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'; 
 
@@ -8,6 +8,8 @@ function App() {
 
   const [edArray, setEdArray] = useState([]);
   const array = [...edArray]; 
+  const [workArray, setWorkArray] = useState([]);
+  const array2 = [...workArray];
 
     function saveEducationDetails() {
     const newEducation = {
@@ -24,10 +26,13 @@ function App() {
 
   }
 
+  
+
   return (
     <>
       <PersonalDetails handleChange={saveEducationDetails}/>
       <Education />
+      <WorkExperience />
     </>
   )
 }

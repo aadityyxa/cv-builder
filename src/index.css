@@ -69,3 +69,17 @@ input {
   border-radius: 8px;
   width: 95%;
 }
+
+.work,
+.education,
+form {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  background: var(--main-bg-color);
+  border: none;
+  resize: none;
+
+}

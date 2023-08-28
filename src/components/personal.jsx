@@ -87,7 +87,55 @@ function Education({array, onChange, onDelete}) {
 
 }
 
+function WorkExperience({array, onChange}) {
+    const [formOpen, setFormOpen] = useState(true);
 
-export {PersonalDetails, Education}; 
+    
+    function toggleForm() {
+        if(formOpen === true) {
+            setFormOpen(false);
+        }else{
+            setFormOpen(true);     
+        }
+    }
+
+    const listItems = array.map((work) => {
+        return(
+            <div className="form-list-item" key={work.id}>
+                <h4 key={work.id}>{work.name}</h4>
+                <div className="icon">
+                <Icon path={mdiTrashCanOutline} size={1} />
+                </div>
+            </div>
+        )}); 
+
+    return(
+        <div className="details">
+            {formOpen?
+            <List list={listItems} klasse='work' onAdd={toggleForm} heading='Work Experience'/>
+            :
+            <form>
+                <FormItem typeAttr='text' nameAttr='company' idAttr='company' text='Company' />
+                <FormItem typeAttr='text' nameAttr='job' idAttr='job' text='Job Title' />
+                <FormItem typeAttr='text' nameAttr='start' idAttr='start' text='Start Year' />
+                <FormItem typeAttr='text' nameAttr='end' idAttr='end' text='End Year' />
+                <FormItem typeAttr='text' nameAttr='location' idAttr='area' text='Location' />
+                <label htmlFor="job-desc">Description</label>
+                <textarea name="job-desc" id="job-desc" cols="30" rows="5"></textarea>
+                <button type="submit" onClick={(e) => {
+                    onChange(); 
+                    e.preventDefault();
+                    toggleForm(); 
+                    
+                }}>Save</button>
+            </form>}
+        </div>
+
+    )
+
+}
+
+
+export {PersonalDetails, Education, WorkExperience}; 
 
 
