@@ -12,6 +12,7 @@ function App() {
   const array2 = [...workArray];
   const [personalObject, setPersonalObject] = useState({name:'Aditya Oza', email:'aditya.oza256@gmail.com', phone:'7359744XXX', address:'Pune'}); 
 
+
     function saveEducationDetails() {
     const newEducation = {
       id:uuidv4(),
@@ -48,7 +49,6 @@ function App() {
   
 
   function savePersonalDetails() {
-    console.log('reached'); 
     const newPersonalDetails = {
       name:document.querySelector('#name').value,
       email:document.querySelector('#email').value,
@@ -64,9 +64,9 @@ function App() {
 
   return (
     <>
-      <PersonalDetails handleChange={saveEducationDetails}/>
-      <Education />
-      <WorkExperience />
+      <PersonalDetails handleChange={savePersonalDetails}/>
+      <Education onChange={saveEducationDetails}/>
+      <WorkExperience onChange ={saveWorkDetails}/>
     </>
   )
 }
