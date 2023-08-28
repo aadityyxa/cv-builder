@@ -10,6 +10,7 @@ function App() {
   const array = [...edArray]; 
   const [workArray, setWorkArray] = useState([]);
   const array2 = [...workArray];
+  const [personalObject, setPersonalObject] = useState({name:'Aditya Oza', email:'aditya.oza256@gmail.com', phone:'7359744XXX', address:'Pune'}); 
 
     function saveEducationDetails() {
     const newEducation = {
@@ -24,6 +25,39 @@ function App() {
     array.push(newEducation); 
     setEdArray(array); 
 
+  }
+
+  
+
+  function saveWorkDetails() {
+    const newWorkExperience = {
+      id:uuidv4(),
+      name:document.querySelector('#company').value,
+      position:document.querySelector('#job').value,
+      start:document.querySelector('#start').value,
+      location:document.querySelector('#area').value,
+      end:document.querySelector('#end').value,
+      description:document.querySelector('#job-desc').value
+
+      }
+        
+      array2.push(newWorkExperience); 
+      setWorkArray(array2); 
+
+  }
+  
+
+  function savePersonalDetails() {
+    console.log('reached'); 
+    const newPersonalDetails = {
+      name:document.querySelector('#name').value,
+      email:document.querySelector('#email').value,
+      phone:document.querySelector('#phone').value,
+      address:document.querySelector('#address').value,
+
+    }
+
+    setPersonalObject(newPersonalDetails); 
   }
 
   
