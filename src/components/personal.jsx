@@ -24,6 +24,19 @@ function PersonalDetails({handleChange}) {
     ) 
 }
 
+function List({list, klasse, onAdd, heading}) {
+    return (
+            <div className={klasse}>
+                <h3>{heading}</h3>
+                {list}
+                <div className="button-container">
+                    <button className="add" onClick={onAdd}>+ Add {heading}</button>
+                </div>
+            </div>
+    )
+
+}
+
 export {PersonalDetails}; 
 
 
