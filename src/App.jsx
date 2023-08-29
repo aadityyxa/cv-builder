@@ -61,12 +61,29 @@ function App() {
   }
 
   
+  function deleteEdItem(id) {
+    const newArray = array.filter((item) => 
+    {
+      return item.id !== id
+    })
+    setEdArray(newArray); 
+  }
+
+  function deleteWorkItem(id) {
+    const newArray = array2.filter((item) => {
+      return item.id!==id
+    })
+    setWorkArray(newArray); 
+  }
+
+  
 
   return (
     <>
       <PersonalDetails handleChange={savePersonalDetails}/>
-      <Education onChange={saveEducationDetails}/>
-      <WorkExperience onChange ={saveWorkDetails}/>
+      <Education array={edArray} onChange={saveEducationDetails} onDelete={deleteEdItem}/>
+      <WorkExperience array={workArray} onChange={saveWorkDetails} onDelete={deleteWorkItem}/>
+
     </>
   )
 }

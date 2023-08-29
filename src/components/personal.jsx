@@ -87,7 +87,7 @@ function Education({array, onChange, onDelete}) {
 
 }
 
-function WorkExperience({array, onChange}) {
+function WorkExperience({array, onChange, onDelete}) {
     const [formOpen, setFormOpen] = useState(true);
 
     
@@ -103,7 +103,7 @@ function WorkExperience({array, onChange}) {
         return(
             <div className="form-list-item" key={work.id}>
                 <h4 key={work.id}>{work.name}</h4>
-                <div className="icon">
+                <div className="icon" onClick={onDelete}>
                 <Icon path={mdiTrashCanOutline} size={1} />
                 </div>
             </div>
