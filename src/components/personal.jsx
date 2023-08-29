@@ -103,7 +103,9 @@ function WorkExperience({array, onChange, onDelete}) {
         return(
             <div className="form-list-item" key={work.id}>
                 <h4 key={work.id}>{work.name}</h4>
-                <div className="icon" onClick={onDelete}>
+                <div className="icon" onClick={() => {
+                    onDelete(work.id); 
+                }}>
                 <Icon path={mdiTrashCanOutline} size={1} />
                 </div>
             </div>
