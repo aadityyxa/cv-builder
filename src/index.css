@@ -83,3 +83,92 @@ textarea {
   resize: none;
 
 }
+
+.cv {
+  height: 80%;
+  width: 100%;
+  color: black;
+}
+
+.container {
+  grid-column: 2/3;
+  grid-row: 1/5;
+  margin: 24px;
+  box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+
+
+.header {
+  color: white;
+  background: navy;
+  padding: 48px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+
+
+span {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 4px;
+}
+
+.cv-section-heading {
+  width: 100%;
+  background: var(--main-bg-color);
+  padding: 12px;
+  text-align: center;
+}
+
+.content {
+  padding: 48px;
+  font-size: 1.2rem;
+}
+
+.list {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cv-list-item {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+}
+
+.top-left {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.bottom-left {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.bottom-right {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.bottom-right {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.job-description {
+  grid-column: 2/3;
+}
