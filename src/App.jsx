@@ -2,6 +2,7 @@
 import {PersonalDetails, Education, WorkExperience} from './components/personal'
 import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'; 
+import { Cv } from './components/cv';
 
 function App() {
 
