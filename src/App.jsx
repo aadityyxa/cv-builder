@@ -1,5 +1,4 @@
 // import { useState } from 'react'
-import './App.css'
 import {PersonalDetails, Education, WorkExperience} from './components/personal'
 import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'; 
@@ -83,7 +82,7 @@ function App() {
       <PersonalDetails handleChange={savePersonalDetails}/>
       <Education array={edArray} onChange={saveEducationDetails} onDelete={deleteEdItem}/>
       <WorkExperience array={workArray} onChange={saveWorkDetails} onDelete={deleteWorkItem}/>
-
+      <Cv personal={personalObject} education={edArray} work={workArray}/>
     </>
   )
 }
